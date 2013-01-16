@@ -1,10 +1,11 @@
 #!/bin/sh
 
 # Automated make-kpkg for OpenVZ on Debian. Made with love by alex on 14/01/13
-# version 0.1
+# Add some tests and an ugly way to get the last version of OpenVZ on 16/01/13
+# version 0.2
 
-# TODO:
-# check dependencies: build-essential, kernel-packages, libncurses5-dev
+# Licence: gnu.org/licenses/gpl.html
+# Made for eNovance
 
 clean_old_files () {
     ls | grep -v `basename $0` | xargs rm -rf {}\;
