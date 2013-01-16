@@ -82,8 +82,8 @@ modify_config () {
 # copy da config
     cp config-"$VERSION_KERNEL"-"$VERSION_VZ".x86_64 config-"$VERSION_KERNEL"-"$VERSION_VZ"-eno.x86_64
 # modify some options on config
-    sed -i "s/CONFIG_EXPERIMENTAL=y/# CONFIG_EXPERIMENTAL is not set/" config-"$VERSION_KERNEL"-"$VERSION_VZ"-eno.x86_64
-    sed -i "s/CONFIG_LOCALVERSION=""/CONFIG_LOCALVERSION="$VERSION_VZ"/" config-"$VERSION_KERNEL"-"$VERSION_VZ"-eno.x86_64
+    #sed -i "s/CONFIG_EXPERIMENTAL=y/# CONFIG_EXPERIMENTAL is not set/" config-"$VERSION_KERNEL"-"$VERSION_VZ"-eno.x86_64
+    #sed -i "s/CONFIG_LOCALVERSION=""/CONFIG_LOCALVERSION="$VERSION_VZ"/" config-"$VERSION_KERNEL"-"$VERSION_VZ"-eno.x86_64
     sed -i "s/# CONFIG_MCORE2 is not set/CONFIG_MCORE2=y/" config-"$VERSION_KERNEL"-"$VERSION_VZ"-eno.x86_64
     sed -i "s/CONFIG_GENERIC_CPU=y/# CONFIG_GENERIC_CPU is not set\nCONFIG_X86_INTEL_USERCOPY=y\nCONFIG_X86_USE_PPRO_CHECKSUM=y\nCONFIG_X86_P6_NOP=y/" config-"$VERSION_KERNEL"-"$VERSION_VZ"-eno.x86_64
 # uncomment to disable building of annoying mlx modules
