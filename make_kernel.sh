@@ -8,7 +8,7 @@
 # Made for eNovance
 
 clean_old_files () {
-    ls | grep -v `basename $0` | xargs rm -rf {}\;
+    ls | grep -v `basename $0` | grep -v README.md | xargs rm -rf {}\;
 }
 
 # ugly hack to find the last openvz version
