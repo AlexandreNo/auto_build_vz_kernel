@@ -15,7 +15,7 @@ clean_old_files () {
 find_version_kernel () {
     wget "http://download.openvz.org/kernel/branches/rhel6-2.6.32/current/kernel.spec"
     VZ=`grep "%define distro_build" kernel.spec | awk '{print $3}' | head -n 1`
-    BUILD=`grep "%define buildid .8" kernel.spec | awk '{print $3}' | head -n 1`
+    BUILD=`grep "%define buildid" kernel.spec | awk '{print $3}' | head -n 1`
     VERSION_VZ="$VZ""$BUILD"
     VERSION_KERNEL=2.6.32
 }
