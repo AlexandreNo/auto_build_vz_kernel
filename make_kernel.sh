@@ -7,6 +7,8 @@
 # Licence: gnu.org/licenses/gpl.html
 # Made for eNovance
 
+NB_PROC=`cat /proc/cpuinfo | grep processor | wc -l`
+
 clean_old_files () {
     ls | grep -v `basename $0` | grep -v README.md | xargs rm -rf {}\;
 }
@@ -103,7 +105,7 @@ export_var () {
 }
 
 build_kernel () {
-    cd linux-"$VERSION_KERNEL" && make-kpkg --rootcmd fakeroot --jobs 24 --arch amd64 --append_to_version -ehaelix-amd64 --revision "$VERSION_KERNEL"-"$VERSION_VZ" --initrd kernel_image kernel_headers
+    cd linux-"$VERSION_KERNEL" && make-kpkg --rootcmd fakeroot --jobs ${NB_PROC} --arch amd64 --append_to_version -ehaelix-amd64 --revision "$VERSION_KERNEL"-"$VERSION_VZ" --initrd kernel_image kernel_headers
 }
 clean_old_files
 find_version_kernel
